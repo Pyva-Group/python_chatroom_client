@@ -11,19 +11,28 @@ We'll try to reply as soon as possible, but please be patient. We are sometimes 
 
 A chatroom is a place where people can send messages instantly to another. Most chatrooms have a *server* and one or more *clients*. Each client is connected to the server, but not to each other! In this way, the server can relay messages from one client to all other clients and moderate message flow. 
 
-This code is the client end of such a chatroom. The server code is kept safe in a private repository on GitHub, and it's not free. If you want it, please email us, and we will reply with details about serving a chatroom. 
+This code is the client end of such a chatroom. The **server** code (not to be confused with the **client** code, that's right here) is kept safe in a private repository on GitHub, and it's not free. If you want it, please email us, and we will reply with details about serving a chatroom. 
 
-Unfortunately, this chatroom only works within local networks, meaning it won't work if the server is too far away from a client. This means that this product is only available for use if the Pyva server is in your general location. 
+#### Terms and Conditions
+Please, PLEASE make sure you read the Terms and Conditions first! It has lots of stuff that you might find is unexpected. By using this program, you agree to everything inside it. If you don't read the last paragraph, you just might have the program deleted from your computer. So, please read the Terms and Conditions! 
 
-**Note:** You can run the program just like any other Python program. There's nothing special with running the code, it's just the stuff inside that you might have to worry about. Please take a look at the "Requirements" section. 
+
+#### Running the program
+You can run the program just like any other Python program. There's nothing special with running the code, it's just the stuff inside that you might have to worry about. Please take a look at the "Requirements" section. 
+
+If you don't know how to run Python programs, we don't want to explain everything here, but you can learn how to by searching on the internet or on Stack Overflow (https://stackoverflow.com). 
 
 ## Known Bugs
+
 There are a few bugs that we know about. If you have any idea how to fix them, please email us! We don't know how to fix these or haven't gotten around to fixing them. 
 
 1. The program uses the `winsound` module to play sounds. Thus, these lines don't work on operating systems other than Windows, so please remove these lines to fix the problem. We'll try to make this work on all operating systems soon. 
 2. Mentioned in a few other places, this doesn't work over different networks. We would highly appreciate help on this topic, becaused it's a **major** issue with the chatroom. 
 
+As for bugs we *don't* know about, please email us so we can fix them. 
+
 ## Updates
+
 The most recent version of the chatroom (Pi) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Here are a list of the updates we have managed to not lose track of. 
 
 - **Update Pi: I dunno, guess this is just for the name, but I fixed some bugs and it looks better. :) **
@@ -52,6 +61,7 @@ We are looking forward to realeasing v4.0 by the start of September. Features in
 5. Sending images and profile pictures. 
 
 ## Requirements
+
 Requirements for this chatroom are: 
 
 1. A working Python environment, such as IDLE. 
@@ -59,9 +69,11 @@ Requirements for this chatroom are:
 3. Knowledge of the IP address and password. 
 
 #### Python environment
+First, if you don't have Python, you should probably download it at https://www.python.org. Then, we highly suggest you learn Python. 
+
 This code is written for Python 3.6, but it should work on earlier versions of Python. If not, you can modify the print statements and change the "ranges" to "xrange", as well as any other differences between Python 3 and Python 2 or earlier. If anything doesn't work with earlier versions of Python and you can't figure out how to fix it, feel free to contact us. 
 
-If you can't figure out how to run this program, we highly suggest learning Python first, because we want you to learn! It will also help with personalizing your chatroom. 
+If you can't figure out how to run this program, we highly suggest learning Python first, because we want you to learn new things! It will also help with personalizing your chatroom. 
 
 #### Location issues
 As stated earlier, you need to be in the same location (or network) as the server for the chatroom to work, for reasons that we don't know. If you know why or have a solution, please contact us! This means that the client won't be useful to you (likely) unless you have the server, which, as stated earlier,  is not open-source yet. 
@@ -70,4 +82,5 @@ As stated earlier, you need to be in the same location (or network) as the serve
 There are also security features for this chatroom. Obviously, one needs to know the IP address of the server to connect. However, we also added a password feature in update 1.01. You will need to know the password to enter the chatroom, and we don't give it out publicly because it's the same password for everybody. 
 
 ## License
-We don't actually have a license for this, so we made the Un-MIT license that uses Un-copyright. So, uh...you can use it however you want! There's nothing we can use against you, because again, **we strongly support tinkering around with code and learning through doing.** 
+
+We don't actually have a license for this. We made the Un-MIT license that uses Un-copyright (that's not a real thing). So, uh...you can use it however you want! There's nothing we can use against you, because again, **we strongly support tinkering around with code and learning through doing.** 
