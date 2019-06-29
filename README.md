@@ -1,3 +1,73 @@
-Hello! 
-Please have fun with this Python ChatRoom. 
-Also, read the Terms and Conditions or your software will be removed. :) 
+# Python ChatRoom Client
+
+Welcome to the Python ChatRoom! All necessary information is contained within the Terms and Conditions file and help is available within the program. This is simply an overview. 
+
+This code was created by the Pyva Group in June of 2019. It has an Un-MIT license with it, which means you are free to use it however you like, and there's no real copyright. Use it however you want! **We strongly support tinkering around with code and learning through doing.** 
+
+If you would like to contact us about any issues listed below, simply have a comment about the program such as improvments we can make or just praise, or have anything else to say, please use the email pyvagroup@gmail.com to get in touch. 
+We'll try to reply as soon as possible, but please be patient. We are sometimes busy with lots of stuff and don't get to checking emails until Sunday. 
+
+## Summary
+
+A chatroom is a place where people can send messages instantly to another. Most chatrooms have a *server* and one or more *clients*. Each client is connected to the server, but not to each other! In this way, the server can relay messages from one client to all other clients and moderate message flow. 
+
+This code is the client end of such a chatroom. The server code is kept safe in a private repository on GitHub, and it's not free. If you want it, please email us, and we will reply with details about serving a chatroom. 
+
+Unfortunately, this chatroom only works within local networks, meaning it won't work if the server is too far away from a client. This means that this product is only available for use if the Pyva server is in your general location. 
+
+**Note:** You can run the program just like any other Python program. There's nothing special with running the code, it's just the stuff inside that you might have to worry about. Please take a look at the "Requirements" section. 
+
+## Known Bugs
+There are a few bugs that we know about. If you have any idea how to fix them, please email us! We don't know how to fix these or haven't gotten around to fixing them. 
+
+1. The program uses the `winsound` module to play sounds. Thus, these lines don't work on operating systems other than Windows, so please remove these lines to fix the problem. We'll try to make this work on all operating systems soon. 
+2. Mentioned in a few other places, this doesn't work over different networks. We would highly appreciate help on this topic, becaused it's a **major** issue with the chatroom. 
+
+## Updates
+The most recent version of the chatroom (Pi) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Here are a list of the updates we have managed to not lose track of. 
+
+- **Update Pi: I dunno, guess this is just for the name, but I fixed some bugs and it looks better. :) **
+- Update v3.0: Fixed the TaC yet again, made Notebook widget for private chats! Yay! No more annoying whispering! Using tkinter.ttk instead of regular tkinter. 
+- Update v2.6: I know I created a new bug, but I don't know what else I added or what I fixed. 
+- Update v2.5: Yet again, I'm not sure. 
+- Update v2.4: I'm not really sure what I fixed here. 
+- Update v2.3: Ready to be released...again? Help menu, updated TaC.  
+- Update v2.21: READY TO BE RELEASED! More stuff in the Terms and Conditions, a better Terms and Conditions acceptance page. 
+- Update v2.2: Ready to go. Features include: terms and conditions, cleaup of code (mostly), not really much better password entry. 
+- Update v2.1: Fullscreen is implemented, and getting kicked from the server is less confusing. Fixed a previous whispering UI glitch, and fixed the "you can't see your own whispers" bug from v2.0. 
+- Update v2.0: Only the server can send stuff! No updates from the client end. 
+- Update v1.1: Added emojis! And more secure password entry. 
+- Update v1.01: Added passwords and exec() functions for naughty users! It shuts down their computers with the new script. :) 
+- Update v0.31: Added Windows XP error sounds! 
+- Update v0.3: Added whispering! 
+- Update v0.2: Better UI! Added a tkinter thing. 
+- Update v0.1: Created the whole thing. 
+
+We are looking forward to realeasing v4.0 by the start of September. Features include: 
+
+1. Server pinging. 
+2. Customizable fonts. 
+3. More secure logins. 
+4. Private group chats. 
+5. Sending images and profile pictures. 
+
+## Requirements
+Requirements for this chatroom are: 
+
+1. A working Python environment, such as IDLE. 
+2. Internet connection to the same network as the Pyva server. 
+3. Knowledge of the IP address and password. 
+
+#### Python environment
+This code is written for Python 3.6, but it should work on earlier versions of Python. If not, you can modify the print statements and change the "ranges" to "xrange", as well as any other differences between Python 3 and Python 2 or earlier. If anything doesn't work with earlier versions of Python and you can't figure out how to fix it, feel free to contact us. 
+
+If you can't figure out how to run this program, we highly suggest learning Python first, because we want you to learn! It will also help with personalizing your chatroom. 
+
+#### Location issues
+As stated earlier, you need to be in the same location (or network) as the server for the chatroom to work, for reasons that we don't know. If you know why or have a solution, please contact us! This means that the client won't be useful to you (likely) unless you have the server, which, as stated earlier,  is not open-source yet. 
+
+#### Security
+There are also security features for this chatroom. Obviously, one needs to know the IP address of the server to connect. However, we also added a password feature in update 1.01. You will need to know the password to enter the chatroom, and we don't give it out publicly because it's the same password for everybody. 
+
+## License
+We don't actually have a license for this, so we made the Un-MIT license that uses Un-copyright. So, uh...you can use it however you want! There's nothing we can use against you, because again, **we strongly support tinkering around with code and learning through doing.** 
