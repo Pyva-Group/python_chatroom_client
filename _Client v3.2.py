@@ -60,11 +60,9 @@ whisperColour = 'blue'
 # Welcome!
 version = 'v3.2'
 print('''
-Client side script.
-Python ChatRoom, made by Bill.
-''' + version + ''', 2019.
-
-Please wait... 
+Client side script. 
+Python ChatRoom, made by Bill. 
+''' + version + ''', 2019. 
 ''')
 
 
@@ -99,11 +97,6 @@ def tkintering():
         agree()
         They actually agree!
         '''
-        f = open('README.txt', 'r')
-        info = ''.join(f.readlines())
-        f.close()
-
-        
         root.destroy()
         print('Thank you for reading through all of that. ')
         return
@@ -131,7 +124,7 @@ def tkintering():
     # Text widget!
     t = tk.Text(root, height = 25, width = 150, font = ('Segoe UI', 12), wrap = tk.WORD)
     t['bg'] = '#FEFEFE'
-    t.grid(row = 1, column = 0, columnspan = 2)
+    t.grid(row = 1, column = 0, columnspan = 2, sticky = 'ns')
 
     # Scrollbar!
     s = tk.Scrollbar(root, orient = tk.VERTICAL)
@@ -154,7 +147,7 @@ def tkintering():
     b2.grid(row = 2, column = 1)
 
     # Done!
-    root.resizable(width = False, height = False)
+    root.resizable(width = True, height = True)
     root.protocol('WM_DELETE_WINDOW', on_closing)
     root.mainloop()
 
