@@ -115,7 +115,6 @@ def tkintering():
         '''
         print('You have not accepted the Terms and Conditions. ')
         print('Please tell us why you did not agree so that we can improve our service. ')
-        print('(Your files have remained intact.) ')
         root.destroy()
         sys.exit()
         return
@@ -145,13 +144,13 @@ def tkintering():
     tac = ''.join(f.readlines())
     f.close()
     t.insert(tk.END, tac)
-    t.config(state = DISABLED)
+    t.config(state = tk.DISABLED)
 
     # Buttons!
     b = ttk.Button(root, text = 'I accept', command = agree) 
     b.grid(row = 2, column = 0)
     
-    b2 = ttk.Button(root, text = 'I do not accept', command = disagree)
+    b2 = ttk.Button(root, text = 'I do not accept', command = meh)
     b2.grid(row = 2, column = 1)
 
     # Done!
@@ -161,7 +160,6 @@ def tkintering():
 
 if not read:
     print('Please make sure you read all of this. ')
-    print('Especially the end! That is the most important part. ')
     
     tkintering()
     f = open('metadata.txt', 'w')
