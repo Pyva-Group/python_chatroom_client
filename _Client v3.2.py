@@ -135,7 +135,7 @@ def tkintering():
     t.grid(row = 1, column = 0, columnspan = 2)
 
     # Scrollbar!
-    s = tk.Scrollbar(root, orient = VERTICAL)
+    s = tk.Scrollbar(root, orient = tk.VERTICAL)
     s.grid(row = 1, column = 2, sticky = 'ns')
     s.config(command = t.yview)
     t.config(yscrollcommand = s.set)
