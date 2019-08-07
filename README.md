@@ -27,6 +27,7 @@ If you don't know how to run Python programs, we don't want to explain everythin
 There are a few bugs that we know about. If you have any idea how to fix them, please email us! We don't know how to fix these or haven't gotten around to fixing them. 
 
 1. The program uses the `winsound` module to play sounds. Thus, these lines don't work on operating systems other than Windows, so please remove these lines to fix the problem. We'll try to make this work on all operating systems soon. 
+2. The resolution doesn't adapt with the custom resolution of your screen. Thus, if you use a larger size than 100% on a non-Windows system, the chatroom may appear blurry. 
 
 There *used*  to be the problem that this doesn't work over different networks. Now it does! :) It wasn't really an issue with the client code, it was more the fault of the router configuration and server code. 
 
@@ -57,6 +58,7 @@ The most recent version of the chatroom (Pi) can be found on the GitHub reposito
 We are looking forward to realeasing v4.0 by the start of September. Features include: 
 
 0. MASSIVE code cleanup. 
+0.1. Fixing resolution issue on all OSs. 
 1. Customizable fonts. 
 2. More secure logins. 
 3. Private group chats. 
