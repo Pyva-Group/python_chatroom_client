@@ -61,6 +61,7 @@ We are looking forward to realeasing v4.0 by the start of September. Features in
 0.1. Fixing resolution issue on all OSs. 
 1. Customizable fonts. 
 2. More secure logins. 
+3. RSA Encryption
 3. Private group chats. 
 4. Sending images and profile pictures. 
 
