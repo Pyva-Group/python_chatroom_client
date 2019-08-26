@@ -1,6 +1,6 @@
 
 # Python ChatRoom Client
-# v4.1.0, August 2019
+# v4.1.2, August 2019
 # Made by Bill.
 # Updates:
 #   Now you can log in from other people's computers. 
@@ -36,7 +36,7 @@ class DevNull:
         '''
         pass
 
-# sys.stderr = DevNull()
+sys.stderr = DevNull()
 
 # Let's make a class for handling sockets!
 class Client(tk.Tk):
