@@ -1,8 +1,7 @@
 
-# Python ChatRoomClient
-#     ClientUI.py
-# v4.0, August 2019
-# This is for clean-up, mostly.
+# Python ChatRoom Client
+#   ClientUI.py
+# v4.1.0, August 2019
 
 # Agh, imports.
 import ctypes

@@ -1,9 +1,9 @@
 
 # Python ChatRoom Client
-# v4.0, August 2019
+# v4.1.0, August 2019
 # Made by Bill.
 # Updates:
-#     Very large clean-up of code.
+#   Now you can log in from other people's computers. 
 
 # Imports first, always.
 import socket
@@ -36,7 +36,7 @@ class DevNull:
         '''
         pass
 
-sys.stderr = DevNull()
+# sys.stderr = DevNull()
 
 # Let's make a class for handling sockets!
 class Client(tk.Tk):
@@ -63,9 +63,6 @@ class Client(tk.Tk):
         f = open('data.txt', 'r')
         self.data = json.load(f)
         f.close()
-
-        if not 'salt' in self.data:
-            self.data['salt'] = secrets.token_urlsafe(64)
 
         if not ('publicKey' in self.data and 'privateKey' in self.data):
             print('No keys detected...generating keys. (This may take a while.) ')
@@ -240,7 +237,7 @@ class Client(tk.Tk):
             self.ui.configure_cursor('')
         credentials = str(self.publicKey.n) + '\n' + str(self.publicKey.e) + '\n'
         credentials += username + '\n'
-        credentials += hashlib.sha512((password + self.data['salt']).encode()).hexdigest() + '\nnewacc'
+        credentials += hashlib.sha512((password + username).encode()).hexdigest() + '\nnewacc'
         self.server.send(credentials.encode())
             
         message = self.server.recv(2048)
@@ -290,7 +287,7 @@ class Client(tk.Tk):
             pk1 = self.publicKey.n
             pk2 = self.publicKey.e
             username = self.ui.entries[1].get()
-            password = hashlib.sha512((self.ui.entries[2].get() + self.data['salt']).encode()).hexdigest()
+            password = hashlib.sha512((self.ui.entries[2].get() + username).encode()).hexdigest()
             
             credentials = str(pk1) + '\n' + str(pk2) + '\n' + username + '\n' + password
             self.server.send(credentials.encode())

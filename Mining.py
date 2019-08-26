@@ -47,7 +47,14 @@ def mine(client):
     Edit this function to mine coins.
     Instructions are included with this file.
     '''
-    return
+    import secrets
+    while True:
+        randomStr = secrets.token_urlsafe(64)
+        if hashlib.sha512((randomStr + client.prevHash).encode()).hexdigest().startswith('0' * client.hashZeroes):
+            try:
+                client.send('/mine ' + randomStr, False)
+            except:
+                return
 
 
 
