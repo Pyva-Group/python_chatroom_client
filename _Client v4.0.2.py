@@ -205,7 +205,7 @@ class Client(tk.Tk):
                 self.ui.entry.delete(0, 'end')
             
         except:
-            print('Sorry, something went wrong with encryption. ')
+            print('Sorry, something went wrong. ')
 
 
     def make_account(self, event = None):
@@ -257,6 +257,7 @@ class Client(tk.Tk):
             return
 
         # Start recieving messages.
+        self.username = username
         self.ui.configure_cursor('')
         self.ui.configure_chatroom()
         _thread.start_new(self.main_thread, ())
