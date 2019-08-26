@@ -44,21 +44,6 @@ With your earned coins, you can buy things! There's not a lot of things you can 
 
 If you have suggestions for improving this system, please email us! We'd love to hear your ideas. In the future, we're thinking of adding a casino and a stock market. 
 
-## Commands
-There are certain commands you can type in the chatroom do request or change info on the server. 
-1. `/active`: Retrieve a list of active users. 
-2. `/w <username> <message>`: Whisper `<message>` to `<user>`. 
-3. `/requestHash`: Retrieve the last hash in the blockchain (described in "Mining" above). 
-4. `/requestLeaderboard`: Retrieve a list of users and their current money total. 
-5. `/a /kick <user>`: If you are an admin, you can kick a `<user>` with this command. 
-6. `/mine <string>`: You can mine a string this way, as specified in the above "Mining" section. Details can be found in the "Mining.py" file. 
-
-There are also special messages the server sends you to keep you informed. First, messages from other users or the server are always sent in the `user> message` format. 
-1. `Server> /balance n` changes your balance by `n`. This action has already been performed by the server and it's official once you receive this message. 
-2. `user> /w <message>` means somebody sent you a private message. 
-3. `Server> You have been kicked by <somebody>.` Means somebody kicked you from the server. `<somebody>` can be the server as well. 
-
-
 ## Bugs
 There are no known bugs as of v4.0. 
 
@@ -66,8 +51,7 @@ If you do find any, please email us so we can fix them!
 
 ## Updates
 
-The most recent version of the chatroom (v4.0) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Please note that v3.x will no longer be compatible with the new server. 
-Here are a list of the updates we have managed to not lose track of. 
+The most recent version of the chatroom (v4.0) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Here are a list of the updates we have managed to not lose track of. 
 
 - Update v4.0: I completely rewrote the code! There's now RSA encryption, a cleaner UI, MINING COINS, accounts (removed `os.getlogin()`), new TaC. 
 - Update v3.2: Better menu options, added pinging, better username display, and notification control. 
@@ -107,7 +91,8 @@ Note that you should have tkinter installed for this. If you don't, you can make
 If you can't figure out how to run this program, we highly suggest learning Python first, because we want you to learn new things! It will also help with personalizing your chatroom. 
 
 #### Security
-There are also security features for this chatroom. One needs to know the IP address of the server to connect. From v4.0, we added accounts! You are required to make an account with an appropriate username and password. Here are the conditions for usernames:
+There are also security features for this chatroom. Obviously, one needs to know the IP address of the server to connect. However, from v4.0, we added accounts! You are required to make an account with an appropriate username and password. Here are the conditions for usernames:
+
 1. Usernames may not contain any of these characters: `<> |.:;,!?()[]{}@#\%*/\\~='"`.
 2. Duplicate usernames are not allowed. 
 3. Usernames may not be any of these keywords: "version", "keychars", "publicKey", "privateKey", "registeredIPs", "admins", or "users". 
@@ -120,4 +105,4 @@ Passwords are sent not in plaintext, but hashed and salted with SHA512. Password
 For security, we use the `rsa` and `pyaes` modules. These folders are copied from the official PyPi repositories, so installing them via `pip install` or some other way works and then you don't need to keep the files that come with the files here. But if you can't do `pip install`, then please keep the `rsa` and `pyaes` folders. 
 
 ## License
-We don't actually have a license for this. We made the Un-MIT license that uses Un-copyright (that's not a real thing). So, uh...you can use it however you want within the terms and conditions! You can edit the code however much you like. 
+We don't actually have a license for this. We made the Un-MIT license that uses Un-copyright (that's not a real thing). So, uh...you can use it however you want! There's nothing we can use against you, because again, **we strongly support tinkering around with code and learning through doing.** 

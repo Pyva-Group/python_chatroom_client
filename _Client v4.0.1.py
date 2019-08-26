@@ -156,9 +156,8 @@ class Client(tk.Tk):
                 messages = message.split('\n')
                 
                 for line in messages:
+                    print(line)
                     if '>' in line:
-                        print(line)
-
                         # Lines with usernames may still contain messages.
                         if line.startswith('Server> You have been kicked by ') and line.endswith('. '):
                             self.dead = True
@@ -184,6 +183,9 @@ class Client(tk.Tk):
                             elif commands[0] == '/updateLeaderboard':
                                 self.ui.updateLeaderboard(' '.join(commands[1:]))
 
+                        else:
+                            _thread.start_new(self.ui.insert, (line,))
+
 
     def send(self, message, deleteEntry = True):
         '''
@@ -203,7 +205,7 @@ class Client(tk.Tk):
                 self.ui.entry.delete(0, 'end')
             
         except:
-            messagebox.showerror(self.title(), 'Sorry, something went wrong with encryption. ')
+            print('Sorry, something went wrong with encryption. ')
 
 
     def make_account(self, event = None):
@@ -248,7 +250,7 @@ class Client(tk.Tk):
             
         except:
             # I dunno! Let the server tell us.
-            message = self.decrypt(message)
+            message = self.decrypt(message[:-5])
             self.ui.logintitle(message)
             self.ui.configure_cursor('')
             self.server.close()

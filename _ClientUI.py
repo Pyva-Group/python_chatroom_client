@@ -126,8 +126,12 @@ class ClientUI():
         Inserts a new message in the given tab.
         If title is not Lobby, we don't get to choose.
         '''
-        index = message.index('>')
-        username = message[:index]
+        if '>' in message:
+            index = message.index('>')
+            username = message[:index]
+        else:
+            index = -2
+            username = ''
         substance = message[index + 2:]
 
         # Check for whispers and errors, and format appropriately.
@@ -190,7 +194,7 @@ class ClientUI():
         self.title['fg'] = '#000000'
         self.title.grid()
         self.button['text'] = 'Back'
-        self.button.configure(command = lambda event = None: self.__init__(self.master, self.data))
+        self.button.configure(command = self.configure_login)
         self.button.grid(row = 5, column = 2)
         self.master.bind('<Return>', lambda event = None: _thread.start_new(self.master.make_account, ()))
         
