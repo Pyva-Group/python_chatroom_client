@@ -1,36 +1,26 @@
 
-Pthon ChatRoom v3.2
-July 2019
-Created by the Pyva Group. (Mostly just Bill, though.) 
-You can learn more about the license in the LICENSE file. 
+Python Chatroom v4.0
+v4.0, August 2019
+Made by Bill.
 
-If you have comments, concerns, or questions, or just want to communicate with us, please contact the Pyva group at pyvagroup@gmail.com. 
+# Terms and Conditions
+Most terms and conditions are too long. I made this short for you. :) 
+By using the chatroom, you agree to these things. They are not ranked in order of importance; they are all equally important. Note that the server you connect to is under the sole control of the people in charge of the server, and they have the right to ban and kick users. We have the final word. 
 
-There used to be a whole bunch of BS here that we wrote just to fill up lots of space. We finally decided to clean that up and write something that people actually read, because nearly nobody actually reads Terms and Conditions. (...hope that's not just us.) So it's really important that you actually read the stuff in here because we even made this shorter just for you, and we only left the really really important stuff in here. 
+- Don't spam the server with anything, be it messages or strings for mining. This will break the encryption and you will get kicked. 
+- If you're an admin, don't kick people without a good reason. 
+- Don't make more than one account. 
+- Be nice to people; don't make anyone feel bad. This means: 
+    - No vulgar language. 
+    - No racist or sexist, remarks. 
+    - Don't marginalize people. 
+- Don't spam our email. 
+- Don't report people unnecessarily. 
+- Don't impersonate anyone on the chatroom or try to fake your identity. 
+- The server keeps the definitive account of how much money everybody has. 
 
-Basically, all you have to do is:
+If you want to report someone, make sure it's an appropriate report and serious enough for our consideration. If you can deal with it yourself, please do so.
 
-agree to not change your identity, 
-agree to not impersonate others, 
-agree not to spam the server, 
-agree not to harm others, 
-agree not to bully, 
-agree to let the admins decide what's appropriate, 
-agree to let the admins execute remote commands on your computer, 
-agree to get banned or put on high alert for breaking this agreement, 
-know you have the right to complain, and 
-know that these terms and conditions are binding. 
+But if it really **really** requires our attention, please email us at pyvagroup@gmail.com for us to review the complaint. 
 
-Thanks! 
-~ Pyva Group
-
-
-
-
-
-
-
-
-
-
-
+If you have any issues with these terms and conditions, you have the right to email us or complain to the people in charge of the server. 

@@ -1,42 +1,75 @@
+
 # Python ChatRoom Client
 
 Welcome to the Python ChatRoom! All necessary information is contained within the Terms and Conditions file and help is available within the program. This is simply an overview. 
 
-This code was created by the Pyva Group in June of 2019. It has an Un-MIT license with it, which means you are free to use it however you like, and there's no real copyright. Use it however you want! **We strongly support tinkering around with code and learning through doing.** 
+This code was created by the Pyva Group in June of 2019. It has an Un-MIT license with it, which means you are free to use it however you like, and there's no real copyright. Use it however you want! **We strongly support tinkering around with code and learning through doing.** In v4.0, we rewrote all the code so that you can change things more easily! 
 
-If you would like to contact us about any issues listed below, simply have a comment about the program such as improvments we can make or just praise, or have anything else to say, please use the email pyvagroup@gmail.com to get in touch. 
 We'll try to reply as soon as possible, but please be patient. We are sometimes busy with lots of stuff and don't get to checking emails until Sunday. 
+If you would like to contact us about any issues listed below, simply have a comment about the program such as improvements we can make or just praise, or have anything else to say, please use the email pyvagroup@gmail.com to get in touch. 
 
 ## Summary
 
-A chatroom is a place where people can send messages instantly to another. Most chatrooms have a *server* and one or more *clients*. Each client is connected to the server, but not to each other! In this way, the server can relay messages from one client to all other clients and moderate message flow. 
+A chatroom is a place where people can send messages instantly to another. Most chatrooms have a *server* and one or more *clients*. Each client is connected to the server, but not to each other! (In other words, this is a centralized network.) In this way, the server can relay messages from one client to all other clients and moderate message flow. 
 
-This code is the client end of such a chatroom. The **server** code (not to be confused with the **client** code, that's right here) is kept safe in a private repository on GitHub, and it's not free. If you want it, please email us, and we will reply with details about serving a chatroom. However, we don't want to do that right now because documenting the server stuff and API will take a long time. So...please be patient! 
+This code is the client end of such a chatroom. The **server** code (not to be confused with the **client** code, that's right here) is in a private repository, and it's not free. If you want it, please email us, and we will reply with details about serving a chatroom. However, we don't want to do that right now because documenting the server code and its API will take a long time. So...please be patient! 
 
 #### Terms and Conditions
-Please, PLEASE make sure you read the Terms and Conditions first! It has lots of stuff that you might find is unexpected. By using this program, you agree to everything inside it. If you don't read the last paragraph, you just might have the program deleted from your computer. So, please read the Terms and Conditions! 
+Please, PLEASE make sure you read the Terms and Conditions first! There are lots of details that come with using the chatroom. By using this program, you agree to everything inside it. If you don't read the last paragraph, you just might have the program deleted from your computer. So, please read the Terms and Conditions! 
 
 
 #### Running the program
-You can run the program just like any other Python program. There's nothing special with running the code, it's just the stuff inside that you might have to worry about. Please take a look at the "Requirements" section. 
+Starting from v4.0, we made some updates to the code structure. We rewrote v4.0 from scratch. Thus we decided to separate the real useful part of the code and the UI that makes it usable. You must run from the `_Client_<version>.py` file. Please disregard other .py files; they are used by the main program. 
 
 If you don't know how to run Python programs, we don't want to explain everything here, but you can learn how to by searching on the internet or on Stack Overflow (https://stackoverflow.com). 
 
-## Known Bugs
+## Mining
+We added currency as just a fun thing. However, there wasn't really any good way to earn currency, so we made something a bit like Bitcoin. If you don't know how that works, here's a great video for learning the very basics: https://www.youtube.com/watch?v=wTC31ZI6QM4. 
 
-There are a few bugs that we know about. If you have any idea how to fix them, please email us! We don't know how to fix these or haven't gotten around to fixing them. 
+The details of mining are in the Mining.py file. You can edit that file to make or adapt your mining strategy. (It starts out empty.) Here's the overview. 
 
-1. The program uses the `winsound` module to play sounds. Thus, these lines don't work on operating systems other than Windows, so please remove these lines to fix the problem. We'll try to make this work on all operating systems soon. 
-2. The resolution doesn't adapt with the custom resolution of your screen. Thus, if you use a larger size than 100% on a non-Windows system, the chatroom may appear blurry. 
+#### Blockchain
+First, we need to know what a hash is. There are tons of other resources that explain this much better than I can. A hash is a function that takes a string of any length as an input. The function the preforms a predefined set of rules to the string to output a fixed length string. This function is such that if the string changed by *just a character*, the hash would be completely different. However, this is a function, so it returns the same value for the same inputs every time. 
 
-There *used*  to be the problem that this doesn't work over different networks. Now it does! :) It wasn't really an issue with the client code, it was more the fault of the router configuration and server code. 
+There are many different hash functions. In this chatroom, I use the SHA512 hash. This function always outputs strings of length 128. 
 
-As for bugs we *don't* know about, please email us so we can fix them. 
+There's something called the blockchain that has a lot of so-called "blocks". Each block contains a "transaction" that is represented by two pieces of data, a user and how much money they recieved for mining the previuos block, as a `(user, reward)` tuple (a tuple is just an array or list). The block also comes with a hash value. 
+
+Your job is to send a string of length 86 to the server, produces a hash starting with at least a certain amount of zeroes (usually 7) when appended to the previous hash. **THE SERVER IS NOT MEANT TO BE A VALIDATION MACHINE.** Please validate your hases on your own computer; details are in the Mining.py file. 
+
+If you submit a correct string, the server rewards you some coins, and a new block is added to the blockchain with your name in it and the hash that starts with a lot of zeroes. 
+
+#### Store
+With your earned coins, you can buy things! There's not a lot of things you can buy right now. Right now, you can buy admin power (described above) with 1000 coins. (We might change the price.) 
+
+If you have suggestions for improving this system, please email us! We'd love to hear your ideas. In the future, we're thinking of adding a casino and a stock market. 
+
+## Commands
+There are certain commands you can type in the chatroom do request or change info on the server. 
+1. `/active`: Retrieve a list of active users. 
+2. `/w <username> <message>`: Whisper `<message>` to `<user>`. 
+3. `/requestHash`: Retrieve the last hash in the blockchain (described in "Mining" above). 
+4. `/requestLeaderboard`: Retrieve a list of users and their current money total. 
+5. `/a /kick <user>`: If you are an admin, you can kick a `<user>` with this command. 
+6. `/mine <string>`: You can mine a string this way, as specified in the above "Mining" section. Details can be found in the "Mining.py" file. 
+
+There are also special messages the server sends you to keep you informed. First, messages from other users or the server are always sent in the `user> message` format. 
+1. `Server> /balance n` changes your balance by `n`. This action has already been performed by the server and it's official once you receive this message. 
+2. `user> /w <message>` means somebody sent you a private message. 
+3. `Server> You have been kicked by <somebody>.` Means somebody kicked you from the server. `<somebody>` can be the server as well. 
+
+
+## Bugs
+There are no known bugs as of v4.0. 
+
+If you do find any, please email us so we can fix them! 
 
 ## Updates
 
-The most recent version of the chatroom (Pi) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Here are a list of the updates we have managed to not lose track of. 
+The most recent version of the chatroom (v4.0) can be found on the GitHub repository at https://github.com/Pyva-Group/python_chatroom_client. Please note that v3.x will no longer be compatible with the new server. 
+Here are a list of the updates we have managed to not lose track of. 
 
+- Update v4.0: I completely rewrote the code! There's now RSA encryption, a cleaner UI, MINING COINS, accounts (removed `os.getlogin()`), new TaC. 
 - Update v3.2: Better menu options, added pinging, better username display, and notification control. 
 - Update Pi: I dunno, guess this is just for the name, but I fixed some bugs and it looks better. :) 
 - Update v3.0: Fixed the TaC yet again, made Notebook widget for private chats! Yay! No more annoying whispering! Using tkinter.ttk instead of regular tkinter. 
@@ -55,34 +88,36 @@ The most recent version of the chatroom (Pi) can be found on the GitHub reposito
 - Update v0.2: Better UI! Added a tkinter thing. 
 - Update v0.1: Created the whole thing. 
 
-We are looking forward to realeasing v4.0 by the start of September. Features include: 
+We hope to add these features. 
 
-0. MASSIVE code cleanup. 
-0.1. Fixing resolution issue on all OSs. 
-1. Customizable fonts. 
-2. More secure logins. 
-3. RSA Encryption. 
-3. Private group chats. 
-4. Sending images and profile pictures. 
+1. Pictures
+2. Blackjack Casino (Not with legit money.)
+3. Stock market
+4. Group chats (sorry, we haven't implemented that yet!)
 
 ## Requirements
-
-Requirements for this chatroom are: 
-
-1. A working Python environment, such as IDLE. 
-2. Knowledge of the IP address and password. 
 
 #### Python environment
 First, if you don't have Python, you should probably download it at https://www.python.org. Then, we highly suggest you learn Python. 
 
 This code is written for Python 3.6, but it should work on earlier versions of Python. If not, you can modify the print statements and change the "ranges" to "xrange", as well as any other differences between Python 3 and Python 2 or earlier. If anything doesn't work with earlier versions of Python and you can't figure out how to fix it, feel free to contact us. 
 
+Note that you should have tkinter installed for this. If you don't, you can make changes to `_Client_<version>.py` to not be dependent on tkinter; there's only a few lines you'll need to change. 
+
 If you can't figure out how to run this program, we highly suggest learning Python first, because we want you to learn new things! It will also help with personalizing your chatroom. 
 
 #### Security
-There are also security features for this chatroom. Obviously, one needs to know the IP address of the server to connect. However, we also added a password feature in update 1.01. You will need to know the password to enter the chatroom, and we don't give it out publicly because it's the same password for everybody. 
+There are also security features for this chatroom. One needs to know the IP address of the server to connect. From v4.0, we added accounts! You are required to make an account with an appropriate username and password. Here are the conditions for usernames:
+1. Usernames may not contain any of these characters: `<> |.:;,!?()[]{}@#\%*/\\~='"`.
+2. Duplicate usernames are not allowed. 
+3. Usernames may not be any of these keywords: "version", "keychars", "publicKey", "privateKey", "registeredIPs", "admins", or "users". 
+
+One account per IP is our rule; we don't want people spamming accounts with one computer. The benefit of this system is that you get to log in on different computers while retaining the same username; also, you get to choose your username instead of having it forced upon you. 
+
+Passwords are sent not in plaintext, but hashed and salted with SHA512. Passwords are stored on the server with SHA512 and with salts. (Don't worry if you don't know what that means; it means that your passwords are safe.) 
+
+#### External Libraries
+For security, we use the `rsa` and `pyaes` modules. These folders are copied from the official PyPi repositories, so installing them via `pip install` or some other way works and then you don't need to keep the files that come with the files here. But if you can't do `pip install`, then please keep the `rsa` and `pyaes` folders. 
 
 ## License
-
-We don't actually have a license for this. We made the Un-MIT license that uses Un-copyright (that's not a real thing). So, uh...you can use it however you want! There's nothing we can use against you, because again, **we strongly support tinkering around with code and learning through doing.** 
-
+We don't actually have a license for this. We made the Un-MIT license that uses Un-copyright (that's not a real thing). So, uh...you can use it however you want within the terms and conditions! You can edit the code however much you like. 
