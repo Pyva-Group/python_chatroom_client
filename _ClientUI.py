@@ -89,6 +89,7 @@ class ClientUI():
         for widget in self.master.winfo_children():
             widget.grid_forget()
             del widget
+        self.master.bind('<Return>', lambda event = None: _thread.start_new(self.master.login, ()))
         self.menubar = tk.Menu(self.master, relief = 'sunken')
         
         self.fileMenu = tk.Menu(self.menubar, tearoff = 0)
